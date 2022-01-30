@@ -1,4 +1,7 @@
 # COMDERS
+Real-time Image Stitching, by [Soham Roy](https://github.com/sohamroy19), [Saurav Kale](https://github.com/siriusBl4ck), [Krishna Somasundaram](https://github.com/krishna122356) & [Varun M](https://github.com/I-am-VarunM).
+
+<br>
 
 ## Requirements
 
