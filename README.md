@@ -16,7 +16,7 @@ Real-time Image Stitching, by [Soham Roy](https://github.com/sohamroy19), [Saura
 ## Execution
 
 #### Python:
-- Read the comments at lines 15-24 of [`TriangleCam.py`](Python/TryangleCam.py) to set camera sources before executing
+- Read the comments at lines 15-24 of [`TryangleCam.py`](Python/TryangleCam.py) to set camera sources before executing
   ```
   python Python/TryangleCam.py
   ```
