@@ -2,6 +2,7 @@
 import imutils
 import cv2
 
+
 class MotionDetector:
     def __init__(self, accumWeight=0.5, deltaThresh=5, minArea=5000):
         # determine the OpenCV version, followed by storing the
@@ -12,19 +13,19 @@ class MotionDetector:
         self.accumWeight = accumWeight
         self.deltaThresh = deltaThresh
         self.minArea = minArea
-        
+
         # initialize the average image for motion detection
         self.avg = None
 
     def update(self, image):
         # initialize the list of locations containing motion
         locs = []
-    
+
         # if the average image is None, initialize it
         if self.avg is None:
             self.avg = image.astype("float")
             return locs
-    
+
         # otherwise, accumulate the weighted average between
         # the current frame and the previous frames, then compute
         # the pixel-wise differences between the current frame
@@ -41,13 +42,13 @@ class MotionDetector:
         # use the appropriate version of OpenCV
         cnts = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         cnts = imutils.grab_contours(cnts)
-        
+
         # loop over the contours
         for c in cnts:
             # only add the contour to the locations list if it
             # exceeds the minimum area
             if cv2.contourArea(c) > self.minArea:
                 locs.append(c)
-        
+
         # return the set of locations
         return locs
